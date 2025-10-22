@@ -59,3 +59,8 @@ fi
 
 echo -e "${GREEN}✨ Fluxo concluído com sucesso.${NC}"
 
+echo -e "${GREEN}✨ git status${NC}"
+git status
+
+
+
