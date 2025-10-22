@@ -1,0 +1,29 @@
+# Arquivos de Compilação e Binários
+# Ignora binários compilados (o executável da sua aplicação)
+/bin/
+# Ignora arquivos de teste e profiling
+*.test
+*.out
+*.prof
+
+# Arquivos de Dependências e Cache
+# Cache de compilação do Go
+/.go-build/
+# Cache de downloads de módulos
+/pkg/
+# Arquivos de dependências de módulos baixados (se você não usar um sistema como o 'vendor')
+/vendor/ 
+
+# Arquivos de IDE (Adicione os que você usa)
+.idea/          # GoLand, IntelliJ
+.vscode/        # VS Code
+*~
+
+# Arquivos de Ambiente
+# Arquivo que contém segredos e configurações locais (NUNCA deve ser commitado)
+.env
+.env.local
+
+# Logs e Dados Temporários
+*.log
+/tmp/
