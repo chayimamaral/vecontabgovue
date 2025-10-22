@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
+interface Responsabilidade {
+  nome: string
+  periodicidade?: string
+  aliquota?: string
+  descricao: string
+}
+
+interface ResponsabilidadesPorTipo {
+  fiscais: Responsabilidade[]
+  tributarias: Responsabilidade[]
+  contabeis: Responsabilidade[]
+}
+
 // Tipos de empresa para selecionar
 const tiposEmpresa = [
   { value: 'MEI', label: 'MEI - Microempreendedor Individual' },
@@ -12,10 +25,9 @@ const tiposEmpresa = [
 ]
 
 const tipoEmpresaSelecionado = ref('')
-const estadoSelecionado = ref('')
 
 // Responsabilidades por tipo de empresa
-const responsabilidadesPorTipo: Record<string, any> = {
+const responsabilidadesPorTipo: Record<string, ResponsabilidadesPorTipo> = {
   'MEI': {
     fiscais: [
       { nome: 'DAS-MEI', periodicidade: 'Mensal', descricao: 'Documento de Arrecadação do Simples Nacional' },

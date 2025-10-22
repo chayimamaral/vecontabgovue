@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
+interface Empresa {
+  id: number
+  nomeEmpresa: string
+  cnpj: string
+  estado: string
+  cidade: string
+  tipoEmpresa: string
+  atividadePrincipal: string
+}
+
 // Estados brasileiros
 const estados = [
   { sigla: 'AC', nome: 'Acre' },
@@ -65,7 +75,7 @@ const formData = ref({
 })
 
 const empresaCadastrada = ref(false)
-const empresasCadastradas = ref<any[]>([])
+const empresasCadastradas = ref<Empresa[]>([])
 
 // Computed property para cidades filtradas
 const cidadesFiltradas = computed(() => {
